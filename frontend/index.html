@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CyberRakshak | AI Cyber Fraud Detection</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            🛡️ Cyber<span>Rakshak</span>
+        </div>
+
+        <div class="status">
+            <span></span> AI Protection Active
+        </div>
+    </nav>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="badge">
+                AI-POWERED CYBER SECURITY
+            </div>
+
+            <h1>
+                Detect Cyber Fraud<br>
+                <span>Before It Happens.</span>
+            </h1>
+
+            <p>
+                Analyze suspicious SMS, WhatsApp messages, emails and
+                links using CyberRakshak's intelligent risk detection engine.
+            </p>
+
+        </section>
+
+
+        <section class="scanner">
+
+            <div class="tabs">
+                <button class="tab active" onclick="selectMode('text')">
+                    💬 Message
+                </button>
+
+                <button class="tab" onclick="selectMode('url')">
+                    🔗 URL
+                </button>
+            </div>
+
+
+            <div id="textMode">
+
+                <label>Paste suspicious message</label>
+
+                <textarea
+                    id="messageInput"
+                    placeholder="Example: URGENT! Your bank account has been blocked. Verify your KYC immediately..."
+                ></textarea>
+
+            </div>
+
+
+            <div id="urlMode" style="display:none;">
+
+                <label>Enter suspicious URL</label>
+
+                <input
+                    id="urlInput"
+                    type="text"
+                    placeholder="https://example.com/login"
+                >
+
+            </div>
+
+
+            <button class="analyze-btn" onclick="analyze()">
+                🔍 Analyze for Fraud
+            </button>
+
+        </section>
+
+
+        <section id="result" class="result hidden">
+
+            <div class="result-header">
+
+                <div>
+                    <p class="small-title">CYBERRAKSHAK ANALYSIS</p>
+                    <h2 id="riskLevel">HIGH RISK</h2>
+                </div>
+
+                <div class="score">
+                    <strong id="riskScore">0</strong>
+                    <small>/100</small>
+                </div>
+
+            </div>
+
+
+            <div class="progress">
+                <div id="progressBar"></div>
+            </div>
+
+
+            <div class="verdict-box">
+
+                <h3 id="verdict">
+                    Possible phishing/fraud
+                </h3>
+
+                <p>
+                    CyberRakshak detected multiple suspicious signals.
+                </p>
+
+            </div>
+
+
+            <h3 class="signals-title">
+                🚨 Detected Signals
+            </h3>
+
+            <div id="signals" class="signals"></div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            CyberRakshak • AI Cyber Fraud Detection System
+        </p>
+    </footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(circle at top, #102a43 0%, #050b14 45%, #02050a 100%);
+    color: white;
+    min-height: 100vh;
+}
+
+nav {
+    height: 70px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.25);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #00e5ff;
+}
+
+.status {
+    font-size: 14px;
+    color: #b7c5d6;
+}
+
+.status span {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: #00ff88;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 10px 45px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #00e5ff;
+    border-radius: 30px;
+    color: #00e5ff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 7vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: #00e5ff;
+}
+
+.hero p {
+    color: #aab8c8;
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.scanner,
+.result {
+    background: rgba(10, 22, 36, 0.85);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tab {
+    padding: 12px 22px;
+    border-radius: 10px;
+    border: 1px solid #26384d;
+    background: #0b1725;
+    color: #aab8c8;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #00e5ff;
+    color: #001018;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #dbe7f2;
+    font-weight: bold;
+}
+
+textarea,
+input {
+    width: 100%;
+    background: #050d16;
+    border: 1px solid #26384d;
+    border-radius: 12px;
+    padding: 18px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+textarea:focus,
+input:focus {
+    border-color: #00e5ff;
+}
+
+.analyze-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: #00e5ff;
+    color: #001018;
+    font-size: 17px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.analyze-btn:hover {
+    transform: translateY(-2px);
+}
+
+.result {
+    margin-top: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small-title {
+    color: #8194a8;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+#riskLevel {
+    margin-top: 7px;
+    font-size: 30px;
+}
+
+.score {
+    font-size: 38px;
+    color: #00e5ff;
+}
+
+.score small {
+    font-size: 15px;
+    color: #8194a8;
+}
+
+.progress {
+    height: 10px;
+    background: #182636;
+    border-radius: 20px;
+    margin: 25px 0;
+    overflow: hidden;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background: #00e5ff;
+    transition: width 0.8s ease;
+}
+
+.verdict-box {
+    background: #07121e;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.verdict-box h3 {
+    margin-bottom: 8px;
+}
+
+.verdict-box p {
+    color: #94a7ba;
+}
+
+.signals-title {
+    margin: 25px 0 15px;
+}
+
+.signals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.signal {
+    background: #28151a;
+    border: 1px solid #71323b;
+    color: #ff8e99;
+    padding: 9px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+footer {
+    text-align: center;
+    padding: 50px;
+    color: #65778b;
+    font-size: 13px;
+}
+
+@media(max-width:600px) {
+
+    nav {
+        padding: 0 5%;
+    }
+
+    .status {
+        display: none;
+    }
+
+    .scanner,
+    .result {
+        padding: 20px;
+    }
+
+    .hero {
+        padding-top: 55px;
+    }
+}
