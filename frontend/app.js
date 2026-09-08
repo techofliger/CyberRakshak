@@ -34,7 +34,8 @@ async function analyze() {
             return;
         }
 
-        endpoint = "https://cyberrakshak-api-iiv5.onrender.com/analyze/text";
+        endpoint =
+            "https://cyberrakshak-api-iiv5.onrender.com/analyze/text";
 
         body = {
             text: text
@@ -49,13 +50,13 @@ async function analyze() {
             return;
         }
 
-        endpoint = "https://cyberrakshak-api-iiv5.onrender.com/analyze/url";
+        endpoint =
+            "https://cyberrakshak-api-iiv5.onrender.com/analyze/url";
 
         body = {
             url: url
         };
     }
-
 
     try {
 
@@ -71,24 +72,25 @@ async function analyze() {
 
         });
 
-
         if (!response.ok) {
-            throw new Error("API request failed");
+            throw new Error(
+                "Server returned " + response.status
+            );
         }
-
 
         const data = await response.json();
 
-        showResult(data);
+        console.log("CyberRakshak API:", data);
 
+        showResult(data);
 
     } catch (error) {
 
-        console.error(error);
+        console.error("CyberRakshak Error:", error);
 
         alert(
-            "Cannot connect to CyberRakshak backend.\n\n" +
-            "Make sure Uvicorn is running on port 8000."
+            "CyberRakshak backend connection failed.\n\n" +
+            "Error: " + error.message
         );
     }
 }
@@ -112,21 +114,22 @@ function showResult(data) {
     document.getElementById("progressBar").style.width =
         data.risk_score + "%";
 
-
-    const signalsBox = document.getElementById("signals");
+    const signalsBox =
+        document.getElementById("signals");
 
     signalsBox.innerHTML = "";
-
 
     if (data.signals && data.signals.length > 0) {
 
         data.signals.forEach(signal => {
 
-            const element = document.createElement("div");
+            const element =
+                document.createElement("div");
 
             element.className = "signal";
 
-            element.textContent = "⚠ " + signal;
+            element.textContent =
+                "⚠ " + signal;
 
             signalsBox.appendChild(element);
 
@@ -137,7 +140,6 @@ function showResult(data) {
         signalsBox.innerHTML =
             '<div class="signal">✓ No suspicious signals</div>';
     }
-
 
     resultBox.scrollIntoView({
         behavior: "smooth"
