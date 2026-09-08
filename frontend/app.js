@@ -34,7 +34,7 @@ async function analyze() {
             return;
         }
 
-        endpoint = "https://cyberrakshak-6ntn.onrender.com/analyze/text";
+        endpoint = "https://cyberrakshak-api-iiv5.onrender.com/analyze/text";
 
         body = {
             text: text
@@ -49,7 +49,7 @@ async function analyze() {
             return;
         }
 
-        endpoint = "https://cyberrakshak-6ntn.onrender.com/analyze/url";
+        endpoint = "https://cyberrakshak-api-iiv5.onrender.com/analyze/url";
 
         body = {
             url: url
